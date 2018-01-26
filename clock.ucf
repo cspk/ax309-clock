@@ -1,1 +1,17 @@
 net "clk" loc = T8;
+
+net "digit_segs<0>" loc = C7;
+net "digit_segs<1>" loc = E6;
+net "digit_segs<2>" loc = C5;
+net "digit_segs<3>" loc = F7;
+net "digit_segs<4>" loc = D6;
+net "digit_segs<5>" loc = E7;
+net "digit_segs<6>" loc = D5;
+net "digit_segs<7>" loc = C6;
+
+net "position<0>" loc = D8;
+net "position<1>" loc = E8;
+net "position<2>" loc = F9;
+net "position<3>" loc = F10;
+net "position<4>" loc = E10;
+net "position<5>" loc = D9;
