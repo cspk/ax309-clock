@@ -1,4 +1,7 @@
 # intermediate build files
+*.cfi
+*.mcs
+*.prm
 *.bgn
 *.bit
 *.bld
