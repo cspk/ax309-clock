@@ -3,7 +3,7 @@ module sseg(
 	input[2:0] digit_pos,
 
 	output reg[7:0] digit_segs,
-	output reg[5:0] position
+	output reg[5:0] digit_sel
 );
 
 always @ (digit) begin
@@ -23,12 +23,12 @@ end
 
 always @ (digit_pos) begin
 	case (digit_pos)
-		3'd0: position <= 6'b011111;
-		3'd1: position <= 6'b101111;
-		3'd2: position <= 6'b110111;
-		3'd3: position <= 6'b111011;
-		3'd4: position <= 6'b111101;
-		3'd5: position <= 6'b111110;
+		3'd0: digit_sel <= 6'b011111;
+		3'd1: digit_sel <= 6'b101111;
+		3'd2: digit_sel <= 6'b110111;
+		3'd3: digit_sel <= 6'b111011;
+		3'd4: digit_sel <= 6'b111101;
+		3'd5: digit_sel <= 6'b111110;
 	endcase
 end
 

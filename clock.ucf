@@ -10,9 +10,9 @@ net "digit_segs<5>" loc = E7;
 net "digit_segs<6>" loc = D5;
 net "digit_segs<7>" loc = C6;
 
-net "position<0>" loc = D8;
-net "position<1>" loc = E8;
-net "position<2>" loc = F9;
-net "position<3>" loc = F10;
-net "position<4>" loc = E10;
-net "position<5>" loc = D9;
+net "digit_sel<0>" loc = D8;
+net "digit_sel<1>" loc = E8;
+net "digit_sel<2>" loc = F9;
+net "digit_sel<3>" loc = F10;
+net "digit_sel<4>" loc = E10;
+net "digit_sel<5>" loc = D9;
