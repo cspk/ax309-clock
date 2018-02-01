@@ -2,21 +2,26 @@ module clock(
 	input clk,
 	input nrst,
 
-	output reg[7:0] digit_segs,
-	output reg[5:0] digit_sel,
+	output[7:0] digit_segs,
+	output[5:0] digit_sel,
 
-	output reg rtc_sclk,
-	output reg rtc_ce,
+	output rtc_sclk,
+	output rtc_ce,
 	inout rtc_data_io
 );
 
-always @ (posedge clk or negedge nrst) begin
-	if (!nrst) begin
-		digit_segs <= 8'd0;
-		digit_sel <= 8'd0;
-		rtc_sclk <= 1'd0;
-		rtc_ce <= 1'd0;
-	end
-end
+wire rtc_poll_freq;
+wire[4:0] digit;
+wire display_refresh_freq;
+wire[2:0] digit_pos;
+wire[4:0] digit_cur;
+
+assign display_refresh_freq = rtc_poll_freq;
+
+clkdiv rtc_sclk_src(clk, 5'd10, rtc_sclk);
+clkdiv rtc_poll_freq_src(clk, 5'd20, rtc_poll_freq);
+rtc rtc_driver(rtc_sclk, rtc_poll_freq, rtc_ce, digit, rtc_data_io);
+display disp(digit, clk, display_refresh_freq, digit_pos, digit_cur);
+sseg seven_seg(digit_cur, digit_pos, digit_segs, digit_sel);
 
 endmodule
