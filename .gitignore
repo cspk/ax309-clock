@@ -72,3 +72,10 @@ _xmsgs/
 # PlanAhead stuff
 pa.*
 planAhead*
+
+# isim stuff
+fuse*
+isim*
+*.exe
+*.wdb
+xilinxsim.ini
