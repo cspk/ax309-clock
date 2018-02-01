@@ -1,6 +1,6 @@
 module clkdiv(
-	input wire clk,
-	input wire[5:0] divisor, // logarithm base 2
+	input clk,
+	input[5:0] divisor, // logarithm base 2
 	
 	output reg divclk
 );

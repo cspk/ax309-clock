@@ -1,7 +1,7 @@
 module display(
-	input wire[4:0] digit,
-	input wire latch,
-	input wire clk,
+	input[4:0] digit,
+	input latch,
+	input clk,
 
 	output reg[2:0] digit_pos,
 	output reg[4:0] digit_cur

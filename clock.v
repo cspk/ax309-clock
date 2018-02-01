@@ -1,6 +1,6 @@
 module clock(
-	input wire clk,
-	input wire nrst,
+	input clk,
+	input nrst,
 
 	output reg[7:0] digit_segs,
 	output reg[5:0] position

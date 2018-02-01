@@ -1,6 +1,6 @@
 module sseg(
-	input wire[4:0] digit,
-	input wire[2:0] digit_pos,
+	input[4:0] digit,
+	input[2:0] digit_pos,
 
 	output reg[7:0] digit_segs,
 	output reg[5:0] position
