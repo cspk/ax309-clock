@@ -1,4 +1,5 @@
 net "clk" loc = T8;
+net "nrst" loc = L3;
 
 net "digit_segs<0>" loc = C7;
 net "digit_segs<1>" loc = E6;

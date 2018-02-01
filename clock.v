@@ -1,14 +1,16 @@
 module clock(
 	input wire clk,
+	input wire nrst,
 
-	output wire[7:0] digit_segs,
-	output wire[5:0] position
+	output reg[7:0] digit_segs,
+	output reg[5:0] position
 );
 
-wire[2:0] digit_pos;
-wire[4:0] digit, digit_cur;
-
-display disp(digit, latch, clk, digit_pos, digit_cur);
-sseg s(digit_cur, digit_pos, digit_segs, position);
+always @ (posedge clk or negedge nrst) begin
+	if (!nrst) begin
+		digit_segs <= 8'd0;
+		position <= 8'd0;
+	end
+end
 
 endmodule
