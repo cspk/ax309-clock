@@ -1,7 +1,7 @@
 module display(
 	input[4:0] digit,
 	input latch,
-	input clk,
+	input refresh_freq,
 
 	output reg[2:0] digit_pos,
 	output reg[4:0] digit_cur
@@ -18,14 +18,9 @@ always @ (negedge latch) begin
 	shift_reg[5] <= shift_reg[4];
 end
 
-reg cnt = 1'b0;
 reg[2:0] digit_i = 3'd0;
 
-always @ (posedge clk) begin
-	cnt <= cnt + 1'b1;
-end
-
-always @ (posedge cnt) begin
+always @ (posedge refresh_freq) begin
 	digit_i <= digit_i + 3'd1;
 	if (digit_i == 3'd5)
 		digit_i <= 3'd0;
