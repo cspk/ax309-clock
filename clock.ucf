@@ -16,3 +16,7 @@ net "digit_sel<2>" loc = F9;
 net "digit_sel<3>" loc = F10;
 net "digit_sel<4>" loc = E10;
 net "digit_sel<5>" loc = D9;
+
+net "rtc_sclk" loc = E13;
+net "rtc_ce" loc = C13;
+net "rtc_data_io" loc = D14;
