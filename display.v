@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module display(
 	input wire[4:0] digit,
 	input wire latch,

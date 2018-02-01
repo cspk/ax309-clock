@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module clkdiv(
 	input wire clk,
 	input wire[5:0] divisor, // logarithm base 2

@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module sseg(
 	input wire[4:0] digit,
 	input wire[2:0] digit_pos,
