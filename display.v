@@ -22,7 +22,7 @@ reg cnt = 1'b0;
 reg[2:0] digit_i = 3'd0;
 
 always @ (posedge clk) begin
-	cnt <= cnt + 1;
+	cnt <= cnt + 1'b1;
 end
 
 always @ (posedge cnt) begin
