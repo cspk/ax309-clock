@@ -6,7 +6,7 @@ module sseg(
 	output reg[5:0] position
 );
 
-always @* begin
+always @ (digit) begin
 	case (digit[3:0])
 		4'd0: digit_segs <= {~digit[4], 7'b0000000};
 		4'd1: digit_segs <= {~digit[4], 7'b1111001};
@@ -19,7 +19,9 @@ always @* begin
 		4'd8: digit_segs <= {~digit[4], 7'b0000000};
 		4'd9: digit_segs <= {~digit[4], 7'b0010000};
 	endcase
+end
 
+always @ (digit_pos) begin
 	case (digit_pos)
 		3'd0: position <= 6'b011111;
 		3'd1: position <= 6'b101111;
