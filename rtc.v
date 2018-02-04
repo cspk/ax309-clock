@@ -13,13 +13,13 @@ reg data_in = 1'b0;
 reg data_out = 1'b0;
 reg input_en = 1'b0;
 
-assign data_in_w = data_in;
-assign data_out_w = data_out;
+assign iobuf_out_wire = data_in;
+assign iobuf_in_wire = data_out;
 
 IOBUF iobuf (
-	.O(data_out_w),
+	.O(iobuf_out_wire),
 	.IO(data_io),
-	.I(data_in_w),
+	.I(iobuf_in_wire),
 	.T(input_en)
 );
 
