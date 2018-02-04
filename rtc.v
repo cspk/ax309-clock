@@ -1,4 +1,4 @@
-module rtc(
+module rtc (
 	input sclk,
 	input poll_freq,
 
@@ -16,7 +16,7 @@ reg input_en = 1'b0;
 assign data_in_w = data_in;
 assign data_out_w = data_out;
 
-IOBUF iobuf(
+IOBUF iobuf (
 	.O(data_out_w),
 	.IO(data_io),
 	.I(data_in_w),

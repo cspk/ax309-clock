@@ -1,4 +1,4 @@
-module sseg(
+module sseg (
 	input[4:0] digit,
 	input[2:0] digit_pos,
 

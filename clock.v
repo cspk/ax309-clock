@@ -1,4 +1,4 @@
-module clock(
+module clock (
 	input clk,
 	input nrst,
 
@@ -18,19 +18,19 @@ wire[4:0] digit_cur;
 
 assign display_refresh_freq = rtc_poll_freq;
 
-clkdiv rtc_sclk_src(
+clkdiv rtc_sclk_src (
 	.clk(clk),
 	.divisor(5'd10),
 	.divclk(rtc_sclk)
 );
 
-clkdiv rtc_poll_freq_src(
+clkdiv rtc_poll_freq_src (
 	.clk(clk),
 	.divisor(5'd20),
 	.divclk(rtc_poll_freq)
 );
 
-rtc rtc_driver(
+rtc rtc_driver (
 	.sclk(rtc_sclk),
 	.poll_freq(rtc_poll_freq),
 	.ce(rtc_ce),
@@ -38,7 +38,7 @@ rtc rtc_driver(
 	.data_io(rtc_data_io)
 );
 
-display disp(
+display disp (
 	.digit(digit),
 	.latch(clk),
 	.refresh_freq(display_refresh_freq),
@@ -46,7 +46,7 @@ display disp(
 	.digit_cur(digit_cur)
 );
 
-sseg seven_seg(
+sseg seven_seg (
 	.digit(digit_cur),
 	.digit_pos(digit_pos),
 	.digit_segs(digit_segs),

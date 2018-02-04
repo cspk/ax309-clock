@@ -1,4 +1,4 @@
-module clkdiv(
+module clkdiv (
 	input clk,
 	input[4:0] divisor, // logarithm base 2
 	

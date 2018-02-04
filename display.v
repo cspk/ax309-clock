@@ -1,4 +1,4 @@
-module display(
+module display (
 	input[4:0] digit,
 	input latch,
 	input refresh_freq,
