@@ -16,7 +16,7 @@ wire display_refresh_freq;
 wire[2:0] digit_pos;
 wire[4:0] digit_cur;
 
-assign display_refresh_freq = rtc_poll_freq;
+assign display_refresh_freq = rtc_sclk;
 
 clkdiv rtc_sclk_src (
 	.clk(clk),
