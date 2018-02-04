@@ -16,7 +16,12 @@ reg input_en = 1'b0;
 assign data_in_w = data_in;
 assign data_out_w = data_out;
 
-IOBUF iobuf(data_out_w, data_io, data_in_w, input_en);
+IOBUF iobuf(
+	.O(data_out_w),
+	.IO(data_io),
+	.I(data_in_w),
+	.T(input_en)
+);
 
 always @ (posedge sclk) begin
 	ce <= 1'b0;
